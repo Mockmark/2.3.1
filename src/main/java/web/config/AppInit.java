@@ -1,8 +1,9 @@
-package application.config;
+package web.config;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class DSInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
+
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return null;
@@ -10,11 +11,14 @@ public class DSInitConfig extends AbstractAnnotationConfigDispatcherServletIniti
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return new Class[]{TemplateConfig.class};
+        return new Class<?>[]{
+                WebConfig.class
+        };
     }
 
     @Override
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }
+
 }
